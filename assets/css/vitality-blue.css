@@ -196,7 +196,9 @@ hr.colored {
   border-color: rgba(255, 255, 255, 0.5);
 }
 .navbar-inverse {
-  background-color: #222222;
+  /*background-color: #222222;*/
+  background-color: #0b3050;
+
 }
 .navbar-default,
 .navbar-inverse {
