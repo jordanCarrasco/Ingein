@@ -901,10 +901,10 @@ aside.cta-quote span.quote {
 }
 .pricing .pricing-item .price .number {
   font-weight: 900;
-  font-size: 50px;
+  font-size: 20px;
 }
 .pricing .pricing-item .price .number sup {
-  font-size: 30px;
+  font-size: 20px;
 }
 .pricing .pricing-item .list-group-item {
   border-radius: 0;

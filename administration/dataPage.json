@@ -12,27 +12,27 @@
       {
         "nombre": "Jorge Torres Fernández",
         "cargo": "Gerente General",
-        "img": ""
+        "img": "assets/img/equipotrabajo/GerenteGeneralJorgeTorres.jpg"
       },
       {
         "nombre": "Raúl Torres Nuñez",
-        "cargo": "Administración",
-        "img": ""
+        "cargo": "Jefe Administración",
+        "img": "assets/img/equipotrabajo/JefeAdministracionRaulTorres.jpg"
       },
       {
         "nombre": "Daniel Loyola Muñoz",
-        "cargo": "Oficina Técnica",
-        "img": ""
+        "cargo": "Jefe Oficina Técnica",
+        "img": "assets/img/equipotrabajo/JefeOficinaTecnicaDanielLoyola.jpg"
       },
       {
-        "nombre": "Asesor Planes Estratégicos",
-        "cargo": "CreateNewDoc()",
-        "img": ""
+        "nombre": "Marcela Castañeda",
+        "cargo": "Supervisora ITO",
+        "img": "assets/img/equipotrabajo/SupervisoraITOMarcelaCastañeda.jpg"
       },
       {
         "nombre": "Hugo Sagüez García",
         "cargo": "Desarrollo de Proyectos",
-        "img": ""
+        "img": "assets/img/equipotrabajo/SupervisoraITOMarcelaCastañeda.jpg"
       }
     ]
   },

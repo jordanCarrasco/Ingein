@@ -1,5 +1,15 @@
 $(document).ready(function(){
 	//$('#paginaCargada').hide();
+	 $.getJSON('http://www.mindicador.cl/api', function(data) {
+                    var dailyIndicators = data;
+                    $('#uf').text('$'+dailyIndicators.uf.valor);                   
+                    $('#utm').text('$'+dailyIndicators.utm.valor);                   
+                    $('#usd').text('$'+dailyIndicators.dolar.valor);                 
+                    $('#ipc').text(dailyIndicators.ipc.valor);   
+                }).fail(function() {
+                    console.log('Error al consumir la API!');
+    });
+
 	$.ajax({
 		url:'administration/dataPage.json',
 		type: 'GET',
@@ -32,7 +42,7 @@ function createHtmlSection(item){
                    $('#sectionAbout').html(html); 
 			break;
 		case 'nuestro_equipo':
-		/*var htmlAux = "";
+		var htmlAux = "";
 			html = "<div class='row'>"+
 		            "    <div class='col-lg-12'>"+
 		            "        <h2>"+item.titulo +"</h2>"+
@@ -45,7 +55,7 @@ function createHtmlSection(item){
 		            "        <div class='about-carousel'>";
 		            $.each(item.integrantes,function(i,item){
 		              htmlAux = htmlAux +"<div class='item'>"+
-		            "                <img src='assets/img/people/1.jpg' class='img-responsive' alt=''>"+
+		            "                <img src='"+ item.img+"' class='img-responsive' alt=''>"+
 		            "                <div class='caption'>"+
 		            "                    <h3>"+item.nombre +"</h3>"+
 		            "                    <hr class='colored'>"+
@@ -68,7 +78,18 @@ function createHtmlSection(item){
 		            html = html + htmlAux + "</div>"+
 		            "    </div>"+
 		            "</div>";
-		            $('#nuestroEquipo').html(html);*/
+		            $('#nuestroEquipo').html(html);
+
+		            // Owl Carousel Settings
+				    $(".about-carousel").owlCarousel({
+				        items: 3,
+				        navigation: true,
+				        pagination: false,
+				        navigationText: [
+				            "<i class='fa fa-angle-left'></i>",
+				            "<i class='fa fa-angle-right'></i>"
+				        ],
+				    });
 		            
 		break;
 		case 'nuestros_servicios':
@@ -83,6 +104,7 @@ function createHtmlSection(item){
             "</div>" +
             "<div class='row content-row'>";
             $.each(item.desc,function(i,b){
+            	aux2 = "";
             	aux = aux + 
             	"    <div class='col-md-4 wow fadeIn' data-wow-delay='.2s'>" +
 	            "        <div class='media'>" +
@@ -91,7 +113,7 @@ function createHtmlSection(item){
 	            "            </div>" +
 	            "            <div class='media-body'>" +
 	            "                <h3 class='media-heading'>"+b.titulo+"</h3>"+
-	            "                <ul>" +
+	            "                <ul>";
 	            $.each(b.detalle,function(i,details){
 	            	aux2 = aux2 + "<li>"+details.desc+"</li>";
 
@@ -102,7 +124,9 @@ function createHtmlSection(item){
 				            "    </div>";
             });          
                    
-            "</div>" ;
+            html = html + aux + "</div>" ;
+            
+            $('#sectionServicios').html(html);
 
 
 		break;
